@@ -18,7 +18,7 @@ export const siteConfig = {
     email: "contact@faizmarketing.in",
     address: "Saharanpur, Uttar Pradesh, India",
     social: {
-        instagram: "https://www.instagram.com/mohd_faizan908",
+        instagram: "https://www.instagram.com/faizmarketingagency",
     },
 };
 
