@@ -1,4 +1,6 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import { useRef, type CSSProperties, type SyntheticEvent } from "react";
 import {
     Check,
     Clock,
@@ -32,8 +34,29 @@ export default function ServiceAccordionItem({ service, index }: Props) {
         "--svc-2": service.color[1],
     } as CSSProperties;
 
+    const detailsRef = useRef<HTMLDetailsElement>(null);
+
+    // When a row opens, bring it fully into view so the visitor doesn't
+    // have to manually scroll down to see the expanded content.
+    const handleToggle = (e: SyntheticEvent<HTMLDetailsElement>) => {
+        if (e.currentTarget.open) {
+            // Wait one frame so the expanded height is already laid out.
+            requestAnimationFrame(() => {
+                detailsRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            });
+        }
+    };
+
     return (
-        <details className="svc-row group overflow-hidden rounded-xl" style={colorVars}>
+        <details
+            ref={detailsRef}
+            onToggle={handleToggle}
+            className="svc-row group scroll-mt-20 overflow-hidden rounded-xl"
+            style={colorVars}
+        >
             <summary className="flex cursor-pointer list-none items-stretch gap-0 [&::-webkit-details-marker]:hidden">
                 {/* Numbered gradient tile */}
                 <span className="svc-grad flex w-9 shrink-0 items-center justify-center font-display text-xs font-bold text-white sm:w-14 sm:text-base">

@@ -5,11 +5,11 @@ export default function ServicesSection() {
     let counter = 0;
 
     return (
-        <section id="services" className="mx-auto max-w-3xl px-3 pb-10 sm:px-6 sm:pb-16">
-            <div className="space-y-8 sm:space-y-10">
+        <section id="services" className="mx-auto max-w-3xl px-4 pb-10 sm:px-6 sm:pb-16">
+            <div className="space-y-7 sm:space-y-10">
                 {categories.map((category) => (
                     <div key={category.id}>
-                        <div className="mb-3 border-l-[3px] border-l-accent pl-3 sm:mb-4 sm:pl-4">
+                        <div className="mb-2.5 border-l-[3px] border-l-accent pl-3 sm:mb-4 sm:pl-4">
                             <h2 className="font-display text-base font-semibold text-foreground sm:text-2xl">
                                 {category.title}
                             </h2>
@@ -18,7 +18,7 @@ export default function ServicesSection() {
                             </p>
                         </div>
 
-                        <div className="space-y-2 sm:space-y-3">
+                        <div className="space-y-1.5 sm:space-y-3">
                             {category.services.map((service) => {
                                 counter += 1;
                                 return (
