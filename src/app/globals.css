@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
+/* Class-based dark mode instead of OS preference, so the toggle controls it. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* pure white */
+  --surface: #ffffff;
+  --surface-muted: #f4f5fd;
+  --border: #dcdff2;
+  --border-strong: #bcc2e6;
+  --foreground: #11132b;
+  --muted: #4c5474;
+  --accent: #4f46e5; /* deep indigo */
+  --accent-hover: #4338ca;
+  --accent-contrast: #ffffff;
+  --accent-soft: #eef0fe;
+  --particle: 79, 70, 229;
+  /* per-row tint strengths */
+  --tint-strong: 12%;
+  --tint-soft: 9%;
+  --border-mix: 26%;
+}
+
+.dark {
+  --background: #06070f;
+  --surface: #101223;
+  --surface-muted: #15182b;
+  --border: #282d47;
+  --border-strong: #3b4166;
+  --foreground: #f1f2fa;
+  --muted: #a7adcb;
+  --accent: #a5b4fc;
+  --accent-hover: #c3cdfe;
+  --accent-contrast: #0a0c1a;
+  --accent-soft: #1a1e36;
+  --particle: 165, 180, 252;
+  --tint-strong: 18%;
+  --tint-soft: 13%;
+  --border-mix: 34%;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+/* ---------------------------------------------------------------
+   Per-service colour system.
+   Each row sets --svc / --svc-2 inline; these classes mix those
+   colours with the current theme surface, so one set of rules
+   works in both light and dark mode.
+   --------------------------------------------------------------- */
+
+.svc-row {
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--svc) var(--tint-strong), var(--surface)) 0%,
+    var(--surface) 60%
+  );
+  border: 1px solid color-mix(in srgb, var(--svc) var(--border-mix), var(--border));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.svc-row:hover {
+  border-color: color-mix(in srgb, var(--svc) 55%, var(--border));
+  box-shadow: 0 12px 26px -14px color-mix(in srgb, var(--svc) 55%, transparent);
+}
+
+.svc-row[open] {
+  border-color: color-mix(in srgb, var(--svc) 65%, var(--border));
+  box-shadow: 0 16px 34px -16px color-mix(in srgb, var(--svc) 60%, transparent);
+}
+
+/* Solid gradient block (number tile, icon badge, buttons) */
+.svc-grad {
+  background-image: linear-gradient(145deg, var(--svc), var(--svc-2));
+}
+
+.svc-text {
+  color: var(--svc);
+}
+
+/* Soft tinted chip that still reads in dark mode */
+.svc-tint {
+  background: color-mix(in srgb, var(--svc) var(--tint-soft), var(--surface));
+  border: 1px solid color-mix(in srgb, var(--svc) 20%, transparent);
+}
+
+.svc-divider {
+  border-color: color-mix(in srgb, var(--svc) 22%, var(--border));
+}
+
+/* ---------------------------------------------------------------
+   Animations
+   --------------------------------------------------------------- */
+
+@keyframes revealDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-down {
+  animation: revealDown 0.28s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+/* Floating pastel blobs in the background */
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(26px, -30px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-20px, 22px, 0) scale(0.94);
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.45;
+  animation: blobFloat 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+.dark .blob {
+  opacity: 0.22;
+  filter: blur(72px);
+}
+
+.accent-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-down,
+  .fade-up,
+  .blob {
+    animation: none;
+  }
+  body {
+    transition: none;
+  }
 }
