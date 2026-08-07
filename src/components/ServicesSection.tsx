@@ -5,12 +5,12 @@ export default function ServicesSection() {
     let counter = 0;
 
     return (
-        <section id="services" className="mx-auto max-w-3xl px-4 pb-10 sm:px-6 sm:pb-16">
+        <section id="services" className="mx-auto max-w-3xl px-3.5 pb-10 sm:px-6 sm:pb-16">
             <div className="space-y-7 sm:space-y-10">
                 {categories.map((category) => (
                     <div key={category.id}>
-                        <div className="mb-2.5 border-l-[3px] border-l-accent pl-3 sm:mb-4 sm:pl-4">
-                            <h2 className="font-display text-base font-semibold text-foreground sm:text-2xl">
+                        <div className="mb-2.5 rounded-lg border-l-[3px] border-l-accent bg-accent-soft/60 py-2 pl-3 pr-2 sm:mb-4 sm:py-2.5 sm:pl-4">
+                            <h2 className="font-display text-base font-bold text-foreground sm:text-2xl">
                                 {category.title}
                             </h2>
                             <p className="mt-0.5 text-[12px] text-muted sm:text-sm">

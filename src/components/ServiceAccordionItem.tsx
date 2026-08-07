@@ -54,12 +54,13 @@ export default function ServiceAccordionItem({ service, index }: Props) {
         <details
             ref={detailsRef}
             onToggle={handleToggle}
-            className="svc-row group scroll-mt-20 overflow-hidden rounded-xl"
+            className="svc-row group scroll-mt-20 overflow-hidden rounded-lg"
             style={colorVars}
         >
             <summary className="flex cursor-pointer list-none items-stretch gap-0 [&::-webkit-details-marker]:hidden">
-                {/* Numbered gradient tile */}
-                <span className="svc-grad flex w-9 shrink-0 items-center justify-center font-display text-xs font-bold text-white sm:w-14 sm:text-base">
+                {/* Numbered tile: kept neutral (not service-coloured) so the
+                    number always has strong contrast against its background. */}
+                <span className="svc-num flex w-8 shrink-0 items-center justify-center font-display text-xs font-bold sm:w-12 sm:text-base">
                     {String(index).padStart(2, "0")}
                 </span>
 
@@ -75,7 +76,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
 
                     <span className="min-w-0 flex-1">
                         <span className="flex items-start gap-1">
-                            <h3 className="text-[13px] font-semibold leading-snug text-foreground sm:text-[15px]">
+                            <h3 className="text-[14px] font-bold leading-snug text-foreground sm:text-base">
                                 {service.name}
                             </h3>
                             <BadgeCheck
