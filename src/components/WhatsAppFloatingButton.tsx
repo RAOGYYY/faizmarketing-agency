@@ -7,7 +7,7 @@ export default function WhatsAppFloatingButton() {
             <a
                 href={getCallLink()}
                 aria-label={`Call karein ${siteConfig.callDisplay}`}
-                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3 text-[13px] font-semibold text-white shadow-xl shadow-indigo-500/30 transition-transform hover:scale-105 active:scale-95"
+                className="flex items-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-lg shadow-accent/25 transition-transform hover:scale-105 active:scale-95"
             >
                 <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
                 Call Now

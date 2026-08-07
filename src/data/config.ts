@@ -4,6 +4,9 @@ export const siteConfig = {
     brandName: "Faiz Marketing Agency",
     tagline: "Aapke Business ki Digital Growth Partner",
 
+    // Production domain, used for metadata, sitemap and structured data.
+    siteUrl: "https://faizmarketing.in",
+
     // WhatsApp number in international format (no +, spaces or dashes).
     whatsappNumber: "919058294333",
     whatsappDisplay: "+91 90582 94333",

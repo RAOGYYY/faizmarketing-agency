@@ -24,52 +24,55 @@ export default function ServiceAccordionItem({ service, index }: Props) {
     } as CSSProperties;
 
     return (
-        <details className="svc-row group overflow-hidden rounded-2xl" style={colorVars}>
+        <details className="svc-row group overflow-hidden rounded-xl" style={colorVars}>
             <summary className="flex cursor-pointer list-none items-stretch gap-0 [&::-webkit-details-marker]:hidden">
                 {/* Numbered gradient tile */}
-                <span className="svc-grad flex w-12 shrink-0 items-center justify-center font-display text-sm font-bold text-white sm:w-16 sm:text-lg">
+                <span className="svc-grad flex w-9 shrink-0 items-center justify-center font-display text-xs font-bold text-white sm:w-14 sm:text-base">
                     {String(index).padStart(2, "0")}
                 </span>
 
-                <span className="flex min-w-0 flex-1 items-center gap-3 py-3 pl-3 pr-3 sm:gap-4 sm:py-4 sm:pl-4">
+                <span className="flex min-w-0 flex-1 items-center gap-2.5 py-2.5 pl-2.5 pr-2.5 sm:gap-4 sm:py-3.5 sm:pl-4 sm:pr-4">
                     {/* Circular icon badge */}
-                    <span className="svc-grad flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white shadow-md sm:h-12 sm:w-12">
+                    <span className="svc-grad flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white shadow-sm sm:h-11 sm:w-11">
                         <ServiceIcon
                             name={service.icon}
-                            className="h-5 w-5 sm:h-6 sm:w-6"
+                            className="h-4.5 w-4.5 sm:h-5 sm:w-5"
                             strokeWidth={2.2}
                         />
                     </span>
 
-                    <span className="min-w-0 flex-1 border-l border-black/5 pl-3 dark:border-white/10 sm:pl-4">
-                        <span className="flex items-center gap-1.5">
-                            <span className="truncate text-[14px] font-bold tracking-tight text-foreground sm:text-[16px]">
+                    <span className="min-w-0 flex-1">
+                        <span className="flex items-start gap-1">
+                            <h3 className="text-[13px] font-semibold leading-snug text-foreground sm:text-[15px]">
                                 {service.name}
-                            </span>
+                            </h3>
                             <BadgeCheck
-                                className="svc-text h-4 w-4 shrink-0 sm:h-[18px] sm:w-[18px]"
+                                className="svc-text mt-0.5 h-3.5 w-3.5 shrink-0 sm:mt-[3px] sm:h-4 sm:w-4"
                                 strokeWidth={2.5}
                             />
                         </span>
-                        <span className="mt-0.5 block truncate text-[12px] text-muted sm:text-[13.5px]">
+                        <span className="mt-0.5 hidden truncate text-[13px] text-muted sm:block">
                             {service.short}
                         </span>
                     </span>
 
                     {/* Large faded watermark icon (desktop only) */}
-                    <span className="svc-text hidden shrink-0 opacity-[0.13] lg:block">
-                        <ServiceIcon name={service.icon} className="h-16 w-16" strokeWidth={1.6} />
+                    <span className="svc-text hidden shrink-0 opacity-[0.12] lg:block">
+                        <ServiceIcon name={service.icon} className="h-14 w-14" strokeWidth={1.6} />
                     </span>
 
                     {/* Circular chevron button */}
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface shadow-md ring-1 ring-black/5 transition-transform duration-200 group-open:rotate-180 dark:ring-white/10 sm:h-9 sm:w-9">
-                        <ChevronDown className="svc-text h-4 w-4 sm:h-[18px] sm:w-[18px]" strokeWidth={2.5} />
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface-muted transition-transform duration-200 group-open:rotate-180 sm:h-8 sm:w-8">
+                        <ChevronDown className="svc-text h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.5} />
                     </span>
                 </span>
             </summary>
 
             {/* Expanded detail */}
-            <div className="reveal-down svc-divider border-t bg-surface px-4 pb-4 pt-4 sm:px-5 sm:pb-5">
+            <div className="reveal-down svc-divider border-t bg-surface px-3.5 pb-4 pt-3.5 sm:px-5 sm:pb-5 sm:pt-4">
+                {/* Short description repeated here for mobile, where the summary row hides it */}
+                <p className="mb-2.5 text-[13px] text-muted sm:hidden">{service.short}</p>
+
                 <p className="text-[13.5px] leading-relaxed text-foreground/80 sm:text-[15px]">
                     {service.description}
                 </p>
@@ -103,7 +106,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                             href={getWhatsAppLink(service.name)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-[13px] font-semibold text-white shadow-md shadow-[#25D366]/25 transition-all hover:bg-[#1eb955] active:scale-[0.98]"
+                            className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#1eb955] active:scale-[0.98]"
                         >
                             <MessageCircle
                                 className="h-4 w-4 shrink-0"
@@ -115,7 +118,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
 
                         <a
                             href={getCallLink()}
-                            className="svc-grad flex items-center justify-center gap-2 rounded-full px-4 py-3 text-[13px] font-semibold text-white shadow-md transition-all hover:brightness-110 active:scale-[0.98]"
+                            className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                         >
                             <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
                             Call: {siteConfig.callDisplay}

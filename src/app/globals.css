@@ -4,22 +4,24 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff; /* pure white */
+  --background: #ffffff;
+  /* pure white */
   --surface: #ffffff;
   --surface-muted: #f4f5fd;
   --border: #dcdff2;
   --border-strong: #bcc2e6;
   --foreground: #11132b;
   --muted: #4c5474;
-  --accent: #4f46e5; /* deep indigo */
-  --accent-hover: #4338ca;
+  --accent: #6366f1;
+  /* softer indigo, not too dark */
+  --accent-hover: #5457e0;
   --accent-contrast: #ffffff;
   --accent-soft: #eef0fe;
-  --particle: 79, 70, 229;
-  /* per-row tint strengths */
-  --tint-strong: 12%;
-  --tint-soft: 9%;
-  --border-mix: 26%;
+  --particle: 99, 102, 241;
+  /* per-row tint strengths, kept subtle for a clean look */
+  --tint-strong: 7%;
+  --tint-soft: 5%;
+  --border-mix: 16%;
 }
 
 .dark {
@@ -35,9 +37,9 @@
   --accent-contrast: #0a0c1a;
   --accent-soft: #1a1e36;
   --particle: 165, 180, 252;
-  --tint-strong: 18%;
-  --tint-soft: 13%;
-  --border-mix: 34%;
+  --tint-strong: 12%;
+  --tint-soft: 8%;
+  --border-mix: 24%;
 }
 
 @theme inline {
@@ -71,11 +73,9 @@ body {
    --------------------------------------------------------------- */
 
 .svc-row {
-  background: linear-gradient(
-    100deg,
-    color-mix(in srgb, var(--svc) var(--tint-strong), var(--surface)) 0%,
-    var(--surface) 60%
-  );
+  background: linear-gradient(100deg,
+      color-mix(in srgb, var(--svc) var(--tint-strong), var(--surface)) 0%,
+      var(--surface) 60%);
   border: 1px solid color-mix(in srgb, var(--svc) var(--border-mix), var(--border));
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -118,6 +118,7 @@ body {
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -133,6 +134,7 @@ body {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -145,13 +147,16 @@ body {
 
 /* Floating pastel blobs in the background */
 @keyframes blobFloat {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) scale(1);
   }
+
   33% {
     transform: translate3d(26px, -30px, 0) scale(1.08);
   }
+
   66% {
     transform: translate3d(-20px, 22px, 0) scale(0.94);
   }
@@ -173,21 +178,21 @@ body {
 
 .accent-rule {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--accent),
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      var(--accent),
+      transparent);
   opacity: 0.6;
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .reveal-down,
   .fade-up,
   .blob {
     animation: none;
   }
+
   body {
     transition: none;
   }
