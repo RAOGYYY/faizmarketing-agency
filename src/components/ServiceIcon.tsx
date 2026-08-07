@@ -24,6 +24,7 @@ import {
     Sparkles,
     Globe,
     TrendingUp,
+    Apple,
     type LucideIcon,
 } from "lucide-react";
 
@@ -53,6 +54,7 @@ const iconMap: Record<string, LucideIcon> = {
     Sparkles,
     Globe,
     TrendingUp,
+    Apple,
 };
 
 type Props = {

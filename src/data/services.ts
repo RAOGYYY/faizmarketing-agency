@@ -9,6 +9,11 @@ export type Service = {
     icon: string;
     /** [from, to] gradient stops for the row accent */
     color: [string, string];
+    /**
+     * When true, this service's contact buttons route to RAOGY's
+     * dedicated WhatsApp/email instead of the agency's regular numbers.
+     */
+    isDev?: boolean;
 };
 
 export type ServiceCategory = {
@@ -422,6 +427,62 @@ export const categories: ServiceCategory[] = [
                 delivery: "Campaign start, 1-2 din",
                 icon: "TrendingUp",
                 color: ["#fb974a", "#f0567a"],
+            },
+        ],
+    },
+    {
+        id: "app-web-development",
+        title: "App & Website Development",
+        description:
+            "Apna Android, iOS app ya business website banayein — powered by RAOGY.",
+        services: [
+            {
+                id: "android-app-development",
+                name: "Android App Development",
+                short: "Apne business ke liye custom Android app banayein.",
+                description:
+                    "Ye service ke through hum aapke business ke liye ek custom Android app design aur develop karte hain, jisse aapke customers Play Store se seedha aapse connect ho saken.",
+                benefits: [
+                    "Custom design, aapke brand ke hisab se",
+                    "Play Store par publish karne me poori madad",
+                    "Scalable aur secure app architecture",
+                ],
+                delivery: "Requirement ke hisab se, 2-4 hafte",
+                icon: "Smartphone",
+                color: ["#3fd6c2", "#2bb3a1"],
+                isDev: true,
+            },
+            {
+                id: "ios-app-development",
+                name: "iOS App Development",
+                short: "Apne business ke liye custom iPhone/iPad app banayein.",
+                description:
+                    "Ye service ke through hum aapke business ke liye ek custom iOS app design aur develop karte hain, jisse aapke customers App Store se seedha aapse connect ho saken.",
+                benefits: [
+                    "Apple guidelines ke hisab se clean design",
+                    "App Store submission me poori madad",
+                    "Smooth aur fast performance",
+                ],
+                delivery: "Requirement ke hisab se, 2-4 hafte",
+                icon: "Apple",
+                color: ["#8285f5", "#6a6fdf"],
+                isDev: true,
+            },
+            {
+                id: "business-website",
+                name: "Business Website Development",
+                short: "Apne business ki professional website banayein.",
+                description:
+                    "Ye service ke through hum aapke business ke liye ek fast, mobile-friendly aur professional website banate hain, jisse aapki online presence strong ho aur customers ka trust badhe.",
+                benefits: [
+                    "Mobile-friendly aur fast-loading design",
+                    "SEO ke liye optimized structure",
+                    "Contact form, WhatsApp integration jaisi zarurat ki features",
+                ],
+                delivery: "Requirement ke hisab se, 1-3 hafte",
+                icon: "Globe",
+                color: ["#66a3fb", "#4a72e8"],
+                isDev: true,
             },
         ],
     },

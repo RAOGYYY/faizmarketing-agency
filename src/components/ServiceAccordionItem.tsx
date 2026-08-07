@@ -5,10 +5,19 @@ import {
     ChevronDown,
     MessageCircle,
     Phone,
+    Mail,
+    ExternalLink,
     BadgeCheck,
 } from "lucide-react";
 import type { Service } from "@/data/services";
-import { getWhatsAppLink, getCallLink, siteConfig } from "@/data/config";
+import {
+    getWhatsAppLink,
+    getCallLink,
+    getDevWhatsAppLink,
+    getDevMailLink,
+    siteConfig,
+    devContact,
+} from "@/data/config";
 import ServiceIcon from "./ServiceIcon";
 
 type Props = {
@@ -101,29 +110,68 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                         Delivery: {service.delivery}
                     </span>
 
-                    <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                        <a
-                            href={getWhatsAppLink(service.name)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#1eb955] active:scale-[0.98]"
-                        >
-                            <MessageCircle
-                                className="h-4 w-4 shrink-0"
-                                fill="currentColor"
-                                strokeWidth={0}
-                            />
-                            WhatsApp: {siteConfig.whatsappDisplay}
-                        </a>
+                    {service.isDev ? (
+                        <>
+                            {/* App & Website Development routes to RAOGY's dedicated contact */}
+                            <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                                <a
+                                    href={getDevWhatsAppLink(service.name)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#1eb955] active:scale-[0.98]"
+                                >
+                                    <MessageCircle
+                                        className="h-4 w-4 shrink-0"
+                                        fill="currentColor"
+                                        strokeWidth={0}
+                                    />
+                                    WhatsApp: {devContact.whatsappDisplay}
+                                </a>
 
-                        <a
-                            href={getCallLink()}
-                            className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
-                        >
-                            <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                            Call: {siteConfig.callDisplay}
-                        </a>
-                    </div>
+                                <a
+                                    href={getDevMailLink(service.name)}
+                                    className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                                >
+                                    <Mail className="h-4 w-4 shrink-0" />
+                                    {devContact.email}
+                                </a>
+                            </div>
+
+                            <a
+                                href={devContact.portfolioUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="svc-tint mt-2.5 flex items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-semibold text-foreground transition-all hover:opacity-90 active:scale-[0.98]"
+                            >
+                                Portfolio Dekhein: raogy.com
+                                <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+                            </a>
+                        </>
+                    ) : (
+                        <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                            <a
+                                href={getWhatsAppLink(service.name)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-[#1eb955] active:scale-[0.98]"
+                            >
+                                <MessageCircle
+                                    className="h-4 w-4 shrink-0"
+                                    fill="currentColor"
+                                    strokeWidth={0}
+                                />
+                                WhatsApp: {siteConfig.whatsappDisplay}
+                            </a>
+
+                            <a
+                                href={getCallLink()}
+                                className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                            >
+                                <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
+                                Call: {siteConfig.callDisplay}
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
         </details>
