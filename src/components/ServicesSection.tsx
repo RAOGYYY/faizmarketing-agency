@@ -9,11 +9,11 @@ export default function ServicesSection() {
             <div className="space-y-7 sm:space-y-10">
                 {categories.map((category) => (
                     <div key={category.id}>
-                        <div className="mb-2.5 rounded-lg border-l-[3px] border-l-accent bg-accent-soft/60 py-2 pl-3 pr-2 sm:mb-4 sm:py-2.5 sm:pl-4">
-                            <h2 className="font-display text-base font-bold text-foreground sm:text-2xl">
+                        <div className="mb-2.5 rounded-lg bg-accent px-3 py-2.5 sm:mb-4 sm:px-4 sm:py-3">
+                            <h2 className="text-[15px] font-semibold text-accent-contrast sm:text-lg">
                                 {category.title}
                             </h2>
-                            <p className="mt-0.5 text-[12px] text-muted sm:text-sm">
+                            <p className="mt-0.5 text-[12px] text-accent-contrast/80 sm:text-sm">
                                 {category.description}
                             </p>
                         </div>
