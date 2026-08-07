@@ -118,6 +118,12 @@ body {
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Category header: solid gradient in the category's own colour, used via
+   the --cat / --cat-2 inline vars set per category. */
+.cat-header {
+  background-image: linear-gradient(120deg, var(--cat), var(--cat-2));
+}
+
 /* ---------------------------------------------------------------
    Animations
    --------------------------------------------------------------- */

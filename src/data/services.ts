@@ -20,6 +20,10 @@ export type ServiceCategory = {
     id: string;
     title: string;
     description: string;
+    /** lucide icon key for the category header, resolved in ServiceIcon.tsx */
+    icon: string;
+    /** [from, to] gradient stops for the category header background */
+    color: [string, string];
     services: Service[];
 };
 
@@ -27,6 +31,8 @@ export const categories: ServiceCategory[] = [
     {
         id: "reputation",
         title: "Business Reviews & Reputation",
+        icon: "Star",
+        color: ["#b45309", "#92400e"],
         description:
             "Apne business ki online reputation strong banayein trusted platforms par.",
         services: [
@@ -110,6 +116,8 @@ export const categories: ServiceCategory[] = [
     {
         id: "social-growth",
         title: "Social Media Growth",
+        icon: "TrendingUp",
+        color: ["#be185d", "#7e22ce"],
         description:
             "Instagram, Facebook aur YouTube par apni presence aur engagement badhayein.",
         services: [
@@ -298,6 +306,8 @@ export const categories: ServiceCategory[] = [
     {
         id: "business-support",
         title: "Business Support Services",
+        icon: "ShieldCheck",
+        color: ["#0369a1", "#0c4a6e"],
         description:
             "Aapke business ki digital presence aur documentation manage karne me madad.",
         services: [
@@ -366,6 +376,8 @@ export const categories: ServiceCategory[] = [
     {
         id: "promotion-ads",
         title: "Promotion & Advertising",
+        icon: "Rocket",
+        color: ["#c2410c", "#9f1239"],
         description: "Apps, influencers aur online ads ke through wider reach payein.",
         services: [
             {
@@ -433,6 +445,8 @@ export const categories: ServiceCategory[] = [
     {
         id: "app-web-development",
         title: "App & Website Development",
+        icon: "Code2",
+        color: ["#8285f5", "#4338ca"],
         description:
             "Apna Android, iOS app ya business website banayein — powered by RAOGY.",
         services: [
