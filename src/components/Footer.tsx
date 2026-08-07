@@ -29,7 +29,7 @@ export default function Footer() {
                         className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-[13px] font-semibold text-white shadow-md shadow-[#25D366]/25 transition-colors hover:bg-[#1eb955]"
                     >
                         <MessageCircle className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                        WhatsApp: {siteConfig.whatsappDisplay}
+                        WhatsApp
                     </a>
 
                     <a
@@ -37,7 +37,7 @@ export default function Footer() {
                         className="flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-[13px] font-semibold text-accent-contrast shadow-md shadow-accent/25 transition-colors hover:bg-accent-hover"
                     >
                         <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                        Call: {siteConfig.callDisplay}
+                        Call Now
                     </a>
                 </div>
 

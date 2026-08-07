@@ -17,7 +17,6 @@ import {
     getCallLink,
     getDevWhatsAppLink,
     getDevMailLink,
-    siteConfig,
     devContact,
 } from "@/data/config";
 import ServiceIcon from "./ServiceIcon";
@@ -149,7 +148,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                                         fill="currentColor"
                                         strokeWidth={0}
                                     />
-                                    WhatsApp: {devContact.whatsappDisplay}
+                                    WhatsApp
                                 </a>
 
                                 <a
@@ -157,7 +156,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                                     className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                                 >
                                     <Mail className="h-4 w-4 shrink-0" />
-                                    {devContact.email}
+                                    Email
                                 </a>
                             </div>
 
@@ -184,7 +183,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                                     fill="currentColor"
                                     strokeWidth={0}
                                 />
-                                WhatsApp: {siteConfig.whatsappDisplay}
+                                WhatsApp
                             </a>
 
                             <a
@@ -192,7 +191,7 @@ export default function ServiceAccordionItem({ service, index }: Props) {
                                 className="flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-[13px] font-semibold text-accent-contrast shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                             >
                                 <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                                Call: {siteConfig.callDisplay}
+                                Call Now
                             </a>
                         </div>
                     )}

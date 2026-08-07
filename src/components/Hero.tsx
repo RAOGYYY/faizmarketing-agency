@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from "lucide-react";
-import { siteConfig, getWhatsAppLink, getCallLink } from "@/data/config";
+import { getWhatsAppLink, getCallLink } from "@/data/config";
 import { allServices } from "@/data/services";
 
 export default function Hero() {
@@ -27,7 +27,7 @@ export default function Hero() {
                         className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-[#25D366]/20 transition-all hover:bg-[#1eb955] active:scale-[0.98]"
                     >
                         <MessageCircle className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                        {siteConfig.whatsappDisplay}
+                        WhatsApp
                     </a>
 
                     <a
@@ -35,7 +35,7 @@ export default function Hero() {
                         className="flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-contrast shadow-md shadow-accent/20 transition-all hover:bg-accent-hover active:scale-[0.98]"
                     >
                         <Phone className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} />
-                        {siteConfig.callDisplay}
+                        Call Now
                     </a>
                 </div>
 

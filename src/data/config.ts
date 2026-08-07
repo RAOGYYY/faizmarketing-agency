@@ -26,8 +26,8 @@ export const siteConfig = {
 // These services are delivered via RAOGY, so they route to RAOGY's own
 // WhatsApp/email rather than the agency's regular numbers above.
 export const devContact = {
-    whatsappNumber: "917037380931",
-    whatsappDisplay: "+91 70373 80931",
+    whatsappNumber: "916300163216",
+    whatsappDisplay: "+91 63001 63216",
     email: "support@raogy.com",
     portfolioUrl: "https://raogy.com",
 };
