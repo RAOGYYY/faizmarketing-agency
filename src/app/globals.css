@@ -109,12 +109,13 @@ body {
   border-color: color-mix(in srgb, var(--svc) 22%, var(--border));
 }
 
-/* Neutral, always-high-contrast number tile: dark on light theme,
-   light on dark theme. Deliberately not tinted by the service colour
-   so the number stays clearly readable everywhere. */
+/* Neutral, always-high-contrast number tile: fixed white background
+   with black text in both themes, so it never blends with the page
+   and stays clearly readable everywhere. */
 .svc-num {
-  background: var(--foreground);
-  color: var(--background);
+  background: #ffffff;
+  color: #000000;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* ---------------------------------------------------------------
