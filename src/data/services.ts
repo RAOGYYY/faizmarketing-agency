@@ -20,194 +20,6 @@ export type ServiceCategory = {
 
 export const categories: ServiceCategory[] = [
     {
-        id: "social-growth",
-        title: "Social Media Growth",
-        description:
-            "Instagram, Facebook aur YouTube par apni presence aur engagement badhayein.",
-        services: [
-            {
-                id: "social-media-marketing",
-                name: "Social Media Marketing",
-                short: "Aapke sabhi social platforms ki complete marketing.",
-                description:
-                    "Social Media Marketing ke through hum aapke brand ko Instagram, Facebook aur YouTube par plan banakar promote karte hain, taaki aapki reach aur sales dono badhe.",
-                benefits: [
-                    "Brand ki online visibility badhti hai",
-                    "Sahi audience tak pahunch",
-                    "Sales aur enquiries me izafa",
-                ],
-                delivery: "Plan ke hisab se, 24-72 hours me shuru",
-                icon: "Megaphone",
-                color: ["#3b82f6", "#1d4ed8"],
-            },
-            {
-                id: "instagram-followers",
-                name: "Instagram Followers",
-                short: "Apne Instagram account par real-looking followers badhayein.",
-                description:
-                    "Ye service aapke Instagram account ki follower count badhati hai, jisse naye visitors ko aapka page zyada credible aur popular lagta hai.",
-                benefits: [
-                    "Page zyada trustworthy dikhta hai",
-                    "Naye followers organically aane me help",
-                    "Brand ki social proof badhti hai",
-                ],
-                delivery: "24-48 hours",
-                icon: "Instagram",
-                color: ["#dd2a7b", "#f58529"],
-            },
-            {
-                id: "instagram-likes",
-                name: "Instagram Likes",
-                short: "Apni posts par likes badhakar engagement dikhayein.",
-                description:
-                    "Instagram Likes service aapki posts ko zyada likes deti hai, jisse post zyada engaging aur popular lagti hai, aur naye log bhi like/follow karne ke liye attract hote hain.",
-                benefits: [
-                    "Post ki engagement dikhne me behtar",
-                    "Naye visitors par accha impression",
-                    "Instagram algorithm me post ko boost milta hai",
-                ],
-                delivery: "12-24 hours",
-                icon: "Heart",
-                color: ["#f43f5e", "#ec4899"],
-            },
-            {
-                id: "instagram-comments",
-                name: "Instagram Comments",
-                short: "Apni posts par genuine-looking comments payein.",
-                description:
-                    "Ye service aapki Instagram posts par relevant comments add karti hai, jisse post par conversation dikhti hai aur engagement rate improve hota hai.",
-                benefits: [
-                    "Post par activity zyada dikhti hai",
-                    "Engagement rate improve hota hai",
-                    "Audience ka interest badhta hai",
-                ],
-                delivery: "24-48 hours",
-                icon: "MessageSquare",
-                color: ["#a855f7", "#7c3aed"],
-            },
-            {
-                id: "instagram-reel-views",
-                name: "Instagram Reel Views",
-                short: "Apne Reels ke views badhakar reach increase karein.",
-                description:
-                    "Reel Views service aapke Instagram Reels par views badhati hai, jisse Reel viral hone ke chances zyada hote hain aur Explore page par bhi aane ki sambhavna badhti hai.",
-                benefits: [
-                    "Reel viral hone ke chances badhte hain",
-                    "Explore page par aane ki sambhavna",
-                    "Naye followers milne me madad",
-                ],
-                delivery: "12-24 hours",
-                icon: "Film",
-                color: ["#f59e0b", "#f97316"],
-            },
-            {
-                id: "instagram-story-views",
-                name: "Instagram Story Views",
-                short: "Apni Stories ke views badhayein.",
-                description:
-                    "Ye service aapki Instagram Stories par views badhati hai, jisse aapki daily updates zyada logon tak pahunchti dikhti hain.",
-                benefits: [
-                    "Story ki reach badhi hui dikhti hai",
-                    "Brand active aur popular lagta hai",
-                    "Engagement metrics improve hote hain",
-                ],
-                delivery: "Same day",
-                icon: "Eye",
-                color: ["#ec4899", "#a855f7"],
-            },
-            {
-                id: "facebook-followers",
-                name: "Facebook Followers",
-                short: "Apne Facebook page ke followers badhayein.",
-                description:
-                    "Facebook Followers service se aapke page ki follower count badhti hai, jisse page naye visitors ko zyada established aur trustworthy lagta hai.",
-                benefits: [
-                    "Page zyada credible dikhta hai",
-                    "Naye customers ka trust badhta hai",
-                    "Page ki reach improve hoti hai",
-                ],
-                delivery: "24-48 hours",
-                icon: "Facebook",
-                color: ["#1877f2", "#0b5fce"],
-            },
-            {
-                id: "facebook-likes",
-                name: "Facebook Likes",
-                short: "Page aur posts par likes badhakar popularity dikhayein.",
-                description:
-                    "Ye service aapke Facebook page ya posts par likes add karti hai, jisse aapka content zyada popular aur engaging dikhta hai.",
-                benefits: [
-                    "Post/page zyada popular dikhta hai",
-                    "Naye visitors par accha first impression",
-                    "Social proof strong hota hai",
-                ],
-                delivery: "24-48 hours",
-                icon: "ThumbsUp",
-                color: ["#2563eb", "#1e40af"],
-            },
-            {
-                id: "facebook-comments",
-                name: "Facebook Comments",
-                short: "Posts par comments badhakar engagement dikhayein.",
-                description:
-                    "Facebook Comments service aapki posts par genuine-looking comments add karti hai, jisse post par active discussion dikhti hai.",
-                benefits: [
-                    "Post par activity dikhti hai",
-                    "Audience engagement improve hota hai",
-                    "Post ki reach badhne me madad",
-                ],
-                delivery: "24-48 hours",
-                icon: "MessageCircle",
-                color: ["#3b82f6", "#6366f1"],
-            },
-            {
-                id: "facebook-page-promotion",
-                name: "Facebook Page Promotion",
-                short: "Apne Facebook Business page ko target audience tak pahunchayein.",
-                description:
-                    "Ye service aapke Facebook Business page ko planned promotion ke through sahi audience tak pahunchati hai, jisse likes, followers aur enquiries badhti hain.",
-                benefits: [
-                    "Sahi target audience tak reach",
-                    "Page likes aur enquiries me badhotri",
-                    "Business ki local/wide visibility",
-                ],
-                delivery: "Campaign ke hisab se, 2-5 din",
-                icon: "Rocket",
-                color: ["#0ea5e9", "#2563eb"],
-            },
-            {
-                id: "youtube-subscribers",
-                name: "YouTube Subscribers",
-                short: "Apne YouTube channel ke subscribers badhayein.",
-                description:
-                    "YouTube Subscribers service se aapke channel ki subscriber count badhti hai, jisse channel zyada credible dikhta hai aur monetization requirements me bhi madad milti hai.",
-                benefits: [
-                    "Channel zyada trustworthy dikhta hai",
-                    "Monetization goals tak pahunchne me madad",
-                    "Naye viewers ka trust badhta hai",
-                ],
-                delivery: "2-4 din",
-                icon: "Youtube",
-                color: ["#ef4444", "#b91c1c"],
-            },
-            {
-                id: "youtube-video-views",
-                name: "YouTube Video Views",
-                short: "Apne videos ke views badhakar reach increase karein.",
-                description:
-                    "Ye service aapke YouTube videos par views badhati hai, jisse video ki ranking aur recommendation chances improve hote hain.",
-                benefits: [
-                    "Video recommendation me aane ke chances badhte hain",
-                    "Channel ki overall watch time improve hoti hai",
-                    "Naye viewers attract hote hain",
-                ],
-                delivery: "2-4 din",
-                icon: "PlayCircle",
-                color: ["#f43f5e", "#dc2626"],
-            },
-        ],
-    },
-    {
         id: "reputation",
         title: "Business Reviews & Reputation",
         description:
@@ -226,7 +38,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "3-7 din",
                 icon: "MapPin",
-                color: ["#4285f4", "#34a853"],
+                color: ["#5a9bfb", "#4fbf80"],
             },
             {
                 id: "justdial-review",
@@ -241,7 +53,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "3-5 din",
                 icon: "Star",
-                color: ["#f59e0b", "#d97706"],
+                color: ["#fbbf53", "#f0a531"],
             },
             {
                 id: "tripadvisor-review",
@@ -256,7 +68,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "3-5 din",
                 icon: "Plane",
-                color: ["#10b981", "#0f766e"],
+                color: ["#34d19e", "#14a396"],
             },
             {
                 id: "amazon-product-review",
@@ -271,7 +83,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "3-7 din",
                 icon: "Package",
-                color: ["#f59e0b", "#ea580c"],
+                color: ["#fbbf53", "#fb8a4c"],
             },
             {
                 id: "playstore-review",
@@ -286,7 +98,195 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "3-5 din",
                 icon: "Download",
-                color: ["#34a853", "#16a34a"],
+                color: ["#5fbf7c", "#3fc25f"],
+            },
+        ],
+    },
+    {
+        id: "social-growth",
+        title: "Social Media Growth",
+        description:
+            "Instagram, Facebook aur YouTube par apni presence aur engagement badhayein.",
+        services: [
+            {
+                id: "social-media-marketing",
+                name: "Social Media Marketing",
+                short: "Aapke sabhi social platforms ki complete marketing.",
+                description:
+                    "Social Media Marketing ke through hum aapke brand ko Instagram, Facebook aur YouTube par plan banakar promote karte hain, taaki aapki reach aur sales dono badhe.",
+                benefits: [
+                    "Brand ki online visibility badhti hai",
+                    "Sahi audience tak pahunch",
+                    "Sales aur enquiries me izafa",
+                ],
+                delivery: "Plan ke hisab se, 24-72 hours me shuru",
+                icon: "Megaphone",
+                color: ["#66a3fb", "#4a72e8"],
+            },
+            {
+                id: "instagram-followers",
+                name: "Instagram Followers",
+                short: "Apne Instagram account par real-looking followers badhayein.",
+                description:
+                    "Ye service aapke Instagram account ki follower count badhati hai, jisse naye visitors ko aapka page zyada credible aur popular lagta hai.",
+                benefits: [
+                    "Page zyada trustworthy dikhta hai",
+                    "Naye followers organically aane me help",
+                    "Brand ki social proof badhti hai",
+                ],
+                delivery: "24-48 hours",
+                icon: "Instagram",
+                color: ["#ec6ba3", "#f9a355"],
+            },
+            {
+                id: "instagram-likes",
+                name: "Instagram Likes",
+                short: "Apni posts par likes badhakar engagement dikhayein.",
+                description:
+                    "Instagram Likes service aapki posts ko zyada likes deti hai, jisse post zyada engaging aur popular lagti hai, aur naye log bhi like/follow karne ke liye attract hote hain.",
+                benefits: [
+                    "Post ki engagement dikhne me behtar",
+                    "Naye visitors par accha impression",
+                    "Instagram algorithm me post ko boost milta hai",
+                ],
+                delivery: "12-24 hours",
+                icon: "Heart",
+                color: ["#fb7185", "#f472b6"],
+            },
+            {
+                id: "instagram-comments",
+                name: "Instagram Comments",
+                short: "Apni posts par genuine-looking comments payein.",
+                description:
+                    "Ye service aapki Instagram posts par relevant comments add karti hai, jisse post par conversation dikhti hai aur engagement rate improve hota hai.",
+                benefits: [
+                    "Post par activity zyada dikhti hai",
+                    "Engagement rate improve hota hai",
+                    "Audience ka interest badhta hai",
+                ],
+                delivery: "24-48 hours",
+                icon: "MessageSquare",
+                color: ["#c084fc", "#a171f5"],
+            },
+            {
+                id: "instagram-reel-views",
+                name: "Instagram Reel Views",
+                short: "Apne Reels ke views badhakar reach increase karein.",
+                description:
+                    "Reel Views service aapke Instagram Reels par views badhati hai, jisse Reel viral hone ke chances zyada hote hain aur Explore page par bhi aane ki sambhavna badhti hai.",
+                benefits: [
+                    "Reel viral hone ke chances badhte hain",
+                    "Explore page par aane ki sambhavna",
+                    "Naye followers milne me madad",
+                ],
+                delivery: "12-24 hours",
+                icon: "Film",
+                color: ["#fbbf53", "#fb974a"],
+            },
+            {
+                id: "instagram-story-views",
+                name: "Instagram Story Views",
+                short: "Apni Stories ke views badhayein.",
+                description:
+                    "Ye service aapki Instagram Stories par views badhati hai, jisse aapki daily updates zyada logon tak pahunchti dikhti hain.",
+                benefits: [
+                    "Story ki reach badhi hui dikhti hai",
+                    "Brand active aur popular lagta hai",
+                    "Engagement metrics improve hote hain",
+                ],
+                delivery: "Same day",
+                icon: "Eye",
+                color: ["#f472b6", "#c084fc"],
+            },
+            {
+                id: "facebook-followers",
+                name: "Facebook Followers",
+                short: "Apne Facebook page ke followers badhayein.",
+                description:
+                    "Facebook Followers service se aapke page ki follower count badhti hai, jisse page naye visitors ko zyada established aur trustworthy lagta hai.",
+                benefits: [
+                    "Page zyada credible dikhta hai",
+                    "Naye customers ka trust badhta hai",
+                    "Page ki reach improve hoti hai",
+                ],
+                delivery: "24-48 hours",
+                icon: "Facebook",
+                color: ["#5c9dfa", "#4380e0"],
+            },
+            {
+                id: "facebook-likes",
+                name: "Facebook Likes",
+                short: "Page aur posts par likes badhakar popularity dikhayein.",
+                description:
+                    "Ye service aapke Facebook page ya posts par likes add karti hai, jisse aapka content zyada popular aur engaging dikhta hai.",
+                benefits: [
+                    "Post/page zyada popular dikhta hai",
+                    "Naye visitors par accha first impression",
+                    "Social proof strong hota hai",
+                ],
+                delivery: "24-48 hours",
+                icon: "ThumbsUp",
+                color: ["#5b8bf5", "#4562d6"],
+            },
+            {
+                id: "facebook-comments",
+                name: "Facebook Comments",
+                short: "Posts par comments badhakar engagement dikhayein.",
+                description:
+                    "Facebook Comments service aapki posts par genuine-looking comments add karti hai, jisse post par active discussion dikhti hai.",
+                benefits: [
+                    "Post par activity dikhti hai",
+                    "Audience engagement improve hota hai",
+                    "Post ki reach badhne me madad",
+                ],
+                delivery: "24-48 hours",
+                icon: "MessageCircle",
+                color: ["#66a3fb", "#8285f5"],
+            },
+            {
+                id: "facebook-page-promotion",
+                name: "Facebook Page Promotion",
+                short: "Apne Facebook Business page ko target audience tak pahunchayein.",
+                description:
+                    "Ye service aapke Facebook Business page ko planned promotion ke through sahi audience tak pahunchati hai, jisse likes, followers aur enquiries badhti hain.",
+                benefits: [
+                    "Sahi target audience tak reach",
+                    "Page likes aur enquiries me badhotri",
+                    "Business ki local/wide visibility",
+                ],
+                delivery: "Campaign ke hisab se, 2-5 din",
+                icon: "Rocket",
+                color: ["#4fc2f5", "#5b8bf5"],
+            },
+            {
+                id: "youtube-subscribers",
+                name: "YouTube Subscribers",
+                short: "Apne YouTube channel ke subscribers badhayein.",
+                description:
+                    "YouTube Subscribers service se aapke channel ki subscriber count badhti hai, jisse channel zyada credible dikhta hai aur monetization requirements me bhi madad milti hai.",
+                benefits: [
+                    "Channel zyada trustworthy dikhta hai",
+                    "Monetization goals tak pahunchne me madad",
+                    "Naye viewers ka trust badhta hai",
+                ],
+                delivery: "2-4 din",
+                icon: "Youtube",
+                color: ["#f57171", "#e35555"],
+            },
+            {
+                id: "youtube-video-views",
+                name: "YouTube Video Views",
+                short: "Apne videos ke views badhakar reach increase karein.",
+                description:
+                    "Ye service aapke YouTube videos par views badhati hai, jisse video ki ranking aur recommendation chances improve hote hain.",
+                benefits: [
+                    "Video recommendation me aane ke chances badhte hain",
+                    "Channel ki overall watch time improve hoti hai",
+                    "Naye viewers attract hote hain",
+                ],
+                delivery: "2-4 din",
+                icon: "PlayCircle",
+                color: ["#fb7185", "#ef5757"],
             },
         ],
     },
@@ -309,7 +309,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Requirement ke hisab se, 1-3 din",
                 icon: "ShieldCheck",
-                color: ["#0ea5e9", "#0369a1"],
+                color: ["#4fc2f5", "#3d9bd6"],
             },
             {
                 id: "digital-branding",
@@ -324,7 +324,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Project ke hisab se, 5-10 din",
                 icon: "Palette",
-                color: ["#a855f7", "#d946ef"],
+                color: ["#c084fc", "#e879f9"],
             },
             {
                 id: "social-media-management",
@@ -339,7 +339,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Monthly service",
                 icon: "LayoutGrid",
-                color: ["#06b6d4", "#0891b2"],
+                color: ["#3ed3ef", "#2eb8d9"],
             },
             {
                 id: "business-profile-promotion",
@@ -354,7 +354,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Campaign ke hisab se, 3-7 din",
                 icon: "Building2",
-                color: ["#14b8a6", "#0d9488"],
+                color: ["#3fd6c2", "#2bb3a1"],
             },
         ],
     },
@@ -376,7 +376,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Campaign ke hisab se, 3-7 din",
                 icon: "Smartphone",
-                color: ["#8b5cf6", "#6366f1"],
+                color: ["#a683fa", "#8285f5"],
             },
             {
                 id: "influencer-promotion",
@@ -391,7 +391,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Influencer availability ke hisab se, 5-10 din",
                 icon: "Sparkles",
-                color: ["#f472b6", "#db2777"],
+                color: ["#f89ecd", "#ec5a9c"],
             },
             {
                 id: "online-promotion-services",
@@ -406,7 +406,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Plan ke hisab se, 3-7 din",
                 icon: "Globe",
-                color: ["#6366f1", "#4338ca"],
+                color: ["#8285f5", "#6a6fdf"],
             },
             {
                 id: "online-advertising",
@@ -421,7 +421,7 @@ export const categories: ServiceCategory[] = [
                 ],
                 delivery: "Campaign start, 1-2 din",
                 icon: "TrendingUp",
-                color: ["#f97316", "#e11d48"],
+                color: ["#fb974a", "#f0567a"],
             },
         ],
     },

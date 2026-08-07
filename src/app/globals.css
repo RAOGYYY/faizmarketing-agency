@@ -10,18 +10,18 @@
   --surface-muted: #f4f5fd;
   --border: #dcdff2;
   --border-strong: #bcc2e6;
-  --foreground: #11132b;
-  --muted: #4c5474;
+  --foreground: #262a45;
+  --muted: #5c6485;
   --accent: #6366f1;
-  /* softer indigo, not too dark */
+  /* light-ish indigo, still readable as button text/background */
   --accent-hover: #5457e0;
   --accent-contrast: #ffffff;
   --accent-soft: #eef0fe;
   --particle: 99, 102, 241;
   /* per-row tint strengths, kept subtle for a clean look */
-  --tint-strong: 7%;
-  --tint-soft: 5%;
-  --border-mix: 16%;
+  --tint-strong: 6%;
+  --tint-soft: 4%;
+  --border-mix: 14%;
 }
 
 .dark {

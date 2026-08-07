@@ -19,11 +19,7 @@ export default function StructuredData() {
             "@type": "PostalAddress",
             addressCountry: "IN",
         },
-        sameAs: [
-            siteConfig.social.instagram,
-            siteConfig.social.facebook,
-            siteConfig.social.youtube,
-        ],
+        sameAs: [siteConfig.social.instagram],
         makesOffer: allServices.map((service) => ({
             "@type": "Offer",
             itemOffered: {

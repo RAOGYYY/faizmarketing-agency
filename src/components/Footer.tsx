@@ -1,7 +1,5 @@
 import {
     Instagram,
-    Facebook,
-    Youtube,
     Phone,
     Mail,
     MapPin,
@@ -10,12 +8,6 @@ import {
 import { siteConfig, getWhatsAppLink, getCallLink } from "@/data/config";
 
 export default function Footer() {
-    const socials = [
-        { href: siteConfig.social.instagram, label: "Instagram", Icon: Instagram },
-        { href: siteConfig.social.facebook, label: "Facebook", Icon: Facebook },
-        { href: siteConfig.social.youtube, label: "YouTube", Icon: Youtube },
-    ];
-
     return (
         <footer className="mt-6 border-t border-line bg-surface-muted/60 px-4 py-12 backdrop-blur-sm sm:px-6 sm:py-16">
             <div className="mx-auto max-w-3xl text-center">
@@ -61,23 +53,31 @@ export default function Footer() {
                     </span>
                 </div>
 
-                <div className="mt-7 flex items-center justify-center gap-3">
-                    {socials.map(({ href, label, Icon }) => (
-                        <a
-                            key={label}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={label}
-                            className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-muted transition-colors hover:border-accent hover:text-accent"
-                        >
-                            <Icon className="h-4 w-4" />
-                        </a>
-                    ))}
+                <div className="mt-7 flex items-center justify-center">
+                    <a
+                        href={siteConfig.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-muted transition-colors hover:border-accent hover:text-accent"
+                    >
+                        <Instagram className="h-4 w-4" />
+                    </a>
                 </div>
 
                 <p className="mt-8 text-[11px] text-muted/70">
                     © {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.
+                </p>
+                <p className="mt-1.5 text-[11px] text-muted/70">
+                    Developed by{" "}
+                    <a
+                        href="https://raogy.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-accent transition-colors hover:text-accent-hover"
+                    >
+                        RAOGY
+                    </a>
                 </p>
             </div>
         </footer>

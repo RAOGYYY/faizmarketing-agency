@@ -18,9 +18,7 @@ export const siteConfig = {
     email: "contact@faizmarketing.in",
     address: "Your City, India",
     social: {
-        instagram: "https://instagram.com/",
-        facebook: "https://facebook.com/",
-        youtube: "https://youtube.com/",
+        instagram: "https://www.instagram.com/mohd_faizan908",
     },
 };
 
