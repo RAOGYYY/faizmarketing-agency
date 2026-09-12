@@ -87,7 +87,21 @@ export default function RewardNestTermsPage() {
                             </Row>
                             <Row tone="amber">
                                 Coins are earned through completing in-app activities (spinning,
-                                quizzes, scratch cards, referrals, and daily logins).
+                                quizzes, scratch cards, games, referrals, and daily logins), by
+                                watching rewarded advertisements, and by completing{" "}
+                                <strong className="font-semibold text-foreground">
+                                    paid surveys
+                                </strong>{" "}
+                                offered through third-party survey partners.
+                            </Row>
+                            <Row tone="amber">
+                                Surveys are entirely optional. Coins credited for a survey may be{" "}
+                                <strong className="font-semibold text-foreground">
+                                    reversed
+                                </strong>{" "}
+                                if the survey partner later reverses or invalidates that
+                                completion, for example where the answers fail their quality
+                                checks. You will be notified if this happens.
                             </Row>
                             <Row tone="amber">
                                 Coins{" "}
@@ -113,18 +127,22 @@ export default function RewardNestTermsPage() {
                     <PolicySection step={4} title="Coin Redemption">
                         <RowList>
                             <Row>
-                                Redemption requests convert Coins into real-world rewards (e.g.,
-                                UPI payments).
+                                Redemption requests convert Coins into real-world rewards via{" "}
+                                <strong className="font-semibold text-foreground">
+                                    UPI, bank transfer, or PayPal
+                                </strong>
+                                , where available in your country.
                             </Row>
                             <Row>
                                 A{" "}
                                 <strong className="font-semibold text-foreground">
                                     minimum balance
                                 </strong>{" "}
-                                is required to redeem (e.g. 10,000 coins in India via UPI; the
-                                equivalent of about $5 for international users via PayPal /
-                                Google Play gift card). Exact thresholds are shown in-app and
-                                may be adjusted by the admin.
+                                is required to redeem — currently 20,000 coins in India via UPI
+                                or bank transfer, or the equivalent of about $5 for
+                                international users via PayPal. Exact thresholds are shown
+                                in-app and may be adjusted by the admin, so the figure in the
+                                app is authoritative.
                             </Row>
                             <Row>
                                 Redemption requests are subject to{" "}
@@ -134,11 +152,12 @@ export default function RewardNestTermsPage() {
                                 .
                             </Row>
                             <Row>
-                                Processing may take{" "}
+                                Payouts usually complete{" "}
                                 <strong className="font-semibold text-foreground">
-                                    7–14 business days
+                                    within 12 hours
                                 </strong>
-                                .
+                                . Requests needing extra verification may take up to 7 business
+                                days.
                             </Row>
                             <Row>
                                 We reserve the right to reject requests due to suspected fraud,
@@ -231,7 +250,87 @@ export default function RewardNestTermsPage() {
                         </p>
                     </PolicySection>
 
-                    <PolicySection step={8} title="Intellectual Property">
+                    <PolicySection step={8} title="Paid Surveys">
+                        <p>
+                            Paid surveys are supplied by independent third-party partners —
+                            currently{" "}
+                            <strong className="font-semibold text-foreground">
+                                CPX Research / MakeOpinion GmbH
+                            </strong>{" "}
+                            and{" "}
+                            <strong className="font-semibold text-foreground">
+                                TheoremReach, Inc.
+                            </strong>{" "}
+                            Taking a survey is always optional.
+                        </p>
+                        <RowList>
+                            <Row>
+                                Surveys open on the partner&apos;s own page. While you are there,
+                                their terms and privacy policy apply in addition to ours.
+                            </Row>
+                            <Row>
+                                Depending on the partner, a survey opens either inside the App or
+                                in your device&apos;s{" "}
+                                <strong className="font-semibold text-foreground">
+                                    web browser
+                                </strong>
+                                . TheoremReach surveys open in the browser. This is normal — you
+                                stay signed in to RewardNest, and your Coins are credited to the
+                                same account when you return. Their page is large and hosted
+                                outside India, so it can take several seconds to load.
+                            </Row>
+                            <Row>
+                                A partner may first ask a short set of{" "}
+                                <strong className="font-semibold text-foreground">
+                                    profile questions
+                                </strong>{" "}
+                                (such as age group or household details) so it can match you to
+                                suitable surveys. Some partners award Coins for completing these.
+                                Answering them is optional, but without them far fewer surveys
+                                will be available to you.
+                            </Row>
+                            <Row>
+                                We pass the partner a random account identifier so it can credit
+                                the right account. We never send your name, email address or
+                                phone number.
+                            </Row>
+                            <Row>
+                                Your survey answers go to the partner and the research company
+                                that commissioned the survey.{" "}
+                                <strong className="font-semibold text-foreground">
+                                    We never receive or store them.
+                                </strong>
+                            </Row>
+                            <Row>
+                                You may not qualify for a survey after starting it. That is the
+                                partner&apos;s decision, not ours. Where the partner pays
+                                something for an unsuccessful attempt, we pass it on as Coins.
+                            </Row>
+                            <Row>
+                                Coins are credited when the partner confirms the result to us,
+                                which is usually immediate but can be delayed by the partner.
+                            </Row>
+                        </RowList>
+                        <Callout tone="rose">
+                            <p className="font-semibold">
+                                Do not create or sign into an account on a survey
+                                partner&apos;s own rewards panel from inside a survey.
+                            </p>
+                        </Callout>
+                        <p>
+                            Some partners advertise their own consumer panel on the survey page.
+                            If you sign into one, your completions stop being linked to your
+                            RewardNest account, no confirmation reaches us, and{" "}
+                            <strong className="font-semibold text-foreground">
+                                the Coins you expected will not arrive here
+                            </strong>{" "}
+                            — you would be earning into a separate account with that company
+                            instead. You do not need any additional account to take surveys in
+                            RewardNest.
+                        </p>
+                    </PolicySection>
+
+                    <PolicySection step={9} title="Intellectual Property">
                         <p>
                             All content in {rewardNest.appName} (logos, designs, code, text) is
                             owned by or licensed to us. You may not copy, reproduce, or
@@ -239,7 +338,7 @@ export default function RewardNestTermsPage() {
                         </p>
                     </PolicySection>
 
-                    <PolicySection step={9} title="Disclaimer of Warranties">
+                    <PolicySection step={10} title="Disclaimer of Warranties">
                         <p>
                             The App is provided{" "}
                             <strong className="font-semibold text-foreground">
@@ -251,7 +350,7 @@ export default function RewardNestTermsPage() {
                         </p>
                     </PolicySection>
 
-                    <PolicySection step={10} title="Limitation of Liability">
+                    <PolicySection step={11} title="Limitation of Liability">
                         <p>
                             To the maximum extent permitted by law, we shall not be liable for
                             any indirect, incidental, or consequential damages arising from
@@ -260,14 +359,14 @@ export default function RewardNestTermsPage() {
                         </p>
                     </PolicySection>
 
-                    <PolicySection step={11} title="Changes to Terms">
+                    <PolicySection step={12} title="Changes to Terms">
                         <p>
                             We may update these Terms at any time. Continued use of the App
                             after changes constitutes your acceptance of the new Terms.
                         </p>
                     </PolicySection>
 
-                    <PolicySection step={12} title="Contact Us">
+                    <PolicySection step={13} title="Contact Us">
                         <p>Questions about these Terms?</p>
                         <div className="space-y-2.5 rounded-lg bg-surface-muted p-4">
                             <a
